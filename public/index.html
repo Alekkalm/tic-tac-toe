@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Крестики-нолики</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 4px;
+      justify-content: center;
+      margin: 20px auto;
+    }
+    .cell {
+      width: 100px; height: 100px;
+      font-size: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: #eee; cursor: pointer; user-select: none;
+    }
+    .cell:hover { background: #ddd; }
+    #status { font-size: 20px; margin: 10px; }
+    #room { padding: 8px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Крестики-нолики</h1>
+  <div>
+    <input id="room" placeholder="ID комнаты" value="room1">
+    <button onclick="join()">Войти</button>
+  </div>
+  <div id="status">Введите комнату и нажмите "Войти"</div>
+  <div id="board"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
